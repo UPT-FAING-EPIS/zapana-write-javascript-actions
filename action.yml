@@ -1,10 +1,8 @@
-name: "Joke Action"
-description: "Fetches a random joke and exposes it as an output"
-
+name: 'Dad Joke Action'
+description: 'Generates a dad joke'
 outputs:
-  joke:
-    description: "The fetched joke text"
-
+  joke: # Este nombre debe coincidir EXACTAMENTE con el de core.setOutput
+    description: 'The generated dad joke'
 runs:
-  using: node24
-  main: dist/index.js
+  using: 'node20'
+  main: 'dist/index.js'
