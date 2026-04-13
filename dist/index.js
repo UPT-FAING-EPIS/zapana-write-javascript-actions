@@ -50,82 +50,37 @@ module.exports = eval("require")("request-promise");
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__nccwpck_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__nccwpck_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__nccwpck_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
-
-// EXTERNAL MODULE: ../../usr/local/share/nvm/versions/node/v24.11.1/lib/node_modules/@vercel/ncc/dist/ncc/@@notfound.js?request-promise
-var _notfoundrequest_promise = __nccwpck_require__(755);
-var _notfoundrequest_promise_default = /*#__PURE__*/__nccwpck_require__.n(_notfoundrequest_promise);
-;// CONCATENATED MODULE: ./src/joke.js
-
-
-const options = {
-  method: "GET",
-  uri: "https://icanhazdadjoke.com/",
-  headers: {
-    Accept: "application/json",
-    "User-Agent": "Writing JavaScript action GitHub Skills exercise.",
-  },
-  json: true,
-};
-
-async function getJoke() {
-  const res = await _notfoundrequest_promise_default()(options);
-  return res.joke;
-}
-
-/* harmony default export */ const src_joke = (getJoke);
-// EXTERNAL MODULE: ../../usr/local/share/nvm/versions/node/v24.11.1/lib/node_modules/@vercel/ncc/dist/ncc/@@notfound.js?@actions/core
-var core = __nccwpck_require__(901);
-;// CONCATENATED MODULE: ./src/main.js
-
-
+const core = __nccwpck_require__(901);
+const rp = __nccwpck_require__(755);
 
 async function run() {
-  const joke = await src_joke();
-  console.log(joke);
-  core.setOutput("joke", joke);
+  try {
+    const options = {
+      uri: 'https://icanhazdadjoke.com/',
+      headers: {
+        'Accept': 'application/json',
+        'User-Agent': 'GitHub-Action-Dad-Joke'
+      },
+      json: true
+    };
+
+    const response = await rp(options);
+    const joke = response.joke;
+
+    core.setOutput('joke', joke); // Asegúrate que aquí diga 'joke'
+    console.log(joke);
+  } catch (error) {
+    core.setFailed(error.message);
+  }
 }
 
 run();
-})();
-
 module.exports = __webpack_exports__;
 /******/ })()
 ;
