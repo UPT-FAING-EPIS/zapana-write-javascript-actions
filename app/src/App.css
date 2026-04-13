@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
 
 :root {
-  --bg-top: #f4f8ff;
-  --bg-bottom: #e7f5ef;
+  --bg-top: #f2fbff;
+  --bg-bottom: #e6f3eb;
   --brand: #0a58ca;
+  --brand-strong: #063f91;
   --brand-soft: #dbe8ff;
   --accent: #157347;
+  --accent-soft: #dff4e8;
   --ink: #1e293b;
-  --muted: #64748b;
+  --muted: #5f7189;
   --panel: #ffffff;
 }
 
@@ -20,8 +22,8 @@ body {
   min-height: 100vh;
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
   color: var(--ink);
-  background: radial-gradient(circle at 10% 0%, #d8edff 0%, transparent 35%),
-    radial-gradient(circle at 90% 15%, #d9f6e8 0%, transparent 32%),
+  background: radial-gradient(circle at 8% 0%, #cbebff 0%, transparent 38%),
+    radial-gradient(circle at 92% 18%, #cdf4e2 0%, transparent 35%),
     linear-gradient(160deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
 }
 
@@ -31,15 +33,52 @@ body {
 
 .brand-navbar {
   backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.88);
-  border-bottom: 1px solid #dce6f4;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(230, 245, 255, 0.9));
+  border-bottom: 1px solid #c9dff8;
+  box-shadow: 0 8px 20px rgba(12, 76, 136, 0.08);
+}
+
+.brand-logo {
+  border-radius: 0.6rem;
+  box-shadow: 0 6px 14px rgba(10, 88, 202, 0.24);
+}
+
+.navbar-brand span {
+  color: var(--brand-strong);
+}
+
+.navbar .nav-link {
+  color: #1c4a8c;
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--brand-strong);
 }
 
 .panel {
   background: var(--panel);
   border-radius: 1rem;
-  border: 1px solid #e3ecf8;
+  border: 1px solid #d9e8f8;
   box-shadow: 0 12px 30px rgba(14, 57, 95, 0.08);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--brand-strong);
+}
+
+p,
+label,
+li,
+td,
+th {
+  color: var(--ink);
 }
 
 .table-zap {
@@ -48,7 +87,7 @@ body {
 }
 
 .table-zap thead {
-  background: var(--brand-soft);
+  background: linear-gradient(90deg, var(--brand-soft), #e8f6ff);
 }
 
 .table-zap thead th {
@@ -65,12 +104,64 @@ body {
   box-shadow: inset 0 0 0 9999px rgba(10, 88, 202, 0.06);
 }
 
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: #f7fbff;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--brand) 0%, #1b6ce6 100%);
+  border-color: var(--brand);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(120deg, var(--brand-strong) 0%, var(--brand) 100%);
+  border-color: var(--brand-strong);
+}
+
+.btn-success {
+  background: linear-gradient(120deg, var(--accent) 0%, #1d8c55 100%);
+  border-color: var(--accent);
+}
+
+.btn-outline-primary {
+  color: var(--brand-strong);
+  border-color: #5d8fd8;
+}
+
+.btn-outline-primary:hover {
+  background: #dceaff;
+  color: var(--brand-strong);
+  border-color: var(--brand);
+}
+
 .quick-link {
   text-decoration: none;
+  color: #1658ad;
+  background: linear-gradient(90deg, #ffffff, #f6fbff);
 }
 
 .quick-link:hover {
+  color: var(--brand-strong);
   text-decoration: underline;
+}
+
+a {
+  color: #1658ad;
+}
+
+a:hover {
+  color: var(--brand-strong);
+}
+
+.list-group-item {
+  border-color: #deebf8;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #7faaf0;
+  box-shadow: 0 0 0 0.25rem rgba(10, 88, 202, 0.14);
 }
 
 .modal-overlay {

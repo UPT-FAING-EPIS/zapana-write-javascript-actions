@@ -2,8 +2,15 @@ function NavigationMenu() {
   return (
     <nav className="navbar navbar-expand-lg brand-navbar sticky-top">
       <div className="container">
-        <a className="navbar-brand fw-bold text-primary" href="#dashboard">
-          Zapana UI
+        <a className="navbar-brand fw-bold text-primary d-flex align-items-center gap-2" href="#dashboard">
+          <img
+            src="/octofitapp-small.svg"
+            alt="Octofitapp small logo"
+            className="brand-logo"
+            width="34"
+            height="34"
+          />
+          <span>Zapana UI</span>
         </a>
         <button
           className="navbar-toggler"
