@@ -6,8 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "ncc build src/main.js -o dist"
-
-    
   },
   "repository": {
     "type": "git",
@@ -26,5 +24,4 @@
     "request": "^2.88.2",
     "request-promise": "^4.2.6"
   }
-  
 }
