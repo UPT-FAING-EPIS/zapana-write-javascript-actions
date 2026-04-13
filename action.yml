@@ -4,5 +4,5 @@ outputs:
   joke: # Este nombre debe coincidir EXACTAMENTE con el de core.setOutput
     description: 'The generated dad joke'
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/index.js'
