@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+
+:root {
+  --bg-top: #f4f8ff;
+  --bg-bottom: #e7f5ef;
+  --brand: #0a58ca;
+  --brand-soft: #dbe8ff;
+  --accent: #157347;
+  --ink: #1e293b;
+  --muted: #64748b;
+  --panel: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 10% 0%, #d8edff 0%, transparent 35%),
+    radial-gradient(circle at 90% 15%, #d9f6e8 0%, transparent 32%),
+    linear-gradient(160deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.brand-navbar {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid #dce6f4;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 1rem;
+  border: 1px solid #e3ecf8;
+  box-shadow: 0 12px 30px rgba(14, 57, 95, 0.08);
+}
+
+.table-zap {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.table-zap thead {
+  background: var(--brand-soft);
+}
+
+.table-zap thead th {
+  color: #0a2a53;
+  font-weight: 700;
+}
+
+.table-zap tbody tr {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.table-zap tbody tr:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 0 0 0 9999px rgba(10, 88, 202, 0.06);
+}
+
+.quick-link {
+  text-decoration: none;
+}
+
+.quick-link:hover {
+  text-decoration: underline;
+}
+
+.modal-overlay {
+  background: rgba(12, 23, 39, 0.4);
+}
+
+@media (max-width: 768px) {
+  .display-5 {
+    font-size: 2rem;
+  }
+}
